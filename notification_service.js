@@ -1,4 +1,4 @@
-var NotifierService = function() {
+module.exports = function() {
   return {
     sendGreeting: function(user) {
       var today = new Date();
@@ -15,12 +15,3 @@ var NotifierService = function() {
     }
   }
 };
-
-var user = {
-  birthdate: function() {
-    return new Date("01/14/1985");
-  }
-};
-
-var ns = new NotifierService();
-console.log(ns.sendGreeting(user)); 
