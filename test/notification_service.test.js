@@ -3,10 +3,12 @@ var should = require('chai').should();
 var sinon = require('sinon');
 
 describe('NotifierService', function() {
-  var ns, user;
+  var ns, ns2, user;
 
   before(function() {
     ns = new NotifierService();
+    ns2 = new NotifierService();
+
     user = {
       birthdate: function() {
         return new Date("01/14/1985");
@@ -15,6 +17,16 @@ describe('NotifierService', function() {
   });
 
   describe('#sendGreeting()', function() {
+    it('should get the date today', function() {
+      var todaySpy = sinon.spy(ns2, 'todayDate');
+
+      ns2.sendGreeting(user);
+
+      todaySpy.calledOnce.should.be.true;
+
+      todaySpy.restore();
+    });
+
     context('when the user birthday is today', function() {
       var stub, stubSendGreeting;
       before(function() {
