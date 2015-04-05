@@ -31,5 +31,10 @@ describe('NotifierService', function() {
       });
     });
 
+    context('when it is not the user birthday', function() {
+      it('should be false', function() {
+        ns.sendGreeting(user).should.be.false;
+      });
+    });
   });
 });
