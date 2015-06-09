@@ -1,5 +1,5 @@
 var should = require('chai').should();
-var Set = require('./Set');
+var Set = require('./../Set');
 
 describe('Set', function() {
   describe('.isEmpty()', function() {

@@ -1,4 +1,4 @@
-var Division = require('./Division');
+var Division = require('./../Division');
 var should = require('chai').should();
 var expect = require('chai').expect;
 
